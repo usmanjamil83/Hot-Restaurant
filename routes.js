@@ -16,6 +16,12 @@ app.use(bodyParser.json({
 }));
 app.get('/all',function (req,res) {
 	res.sendFile(path.join(__dirname,"table.html"))
+
+
+});
+app.get('/arrays',function(req,res){
+	var fullArray = tablesArr.concat(waitList);
+	res.json(fullArray);
 });
 app.get('/reserve',function (req,res){
 	res.sendFile(path.join(__dirname,"reservation.html"));

@@ -72,7 +72,10 @@
         email: $("#email").val().trim(),
         id: $("#id").val().trim()
       };
-
+      $("#name").empty();
+      $("#number").empty();
+      $("#email").empty();
+      $("#id").empty();
       // Question: What does this code do??
       $.post("/reserve-post", newReservation)
       .done(function(data) {

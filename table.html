@@ -53,20 +53,31 @@
 
  <script type="text/javascript">
   $(document).ready(function(){
-    $.get("/arrays",function(data){
-      console.log(data)
-      for (var i = 0 ; i < data.length; i++){
-        if(i < 6){
-        $("#name").html(data[i].name);
-        $("stats").html (data[i].id);
-        }
-        else{
-        $("#wait-name").html(data[i].name);
-        $("wait-stats").html (data[i].id);
-        }
+  
+    // $.get("/arrays",function(data){
+    //   console.log(data)
+    
+    //   appendtoDom(data);
+    // });
+    // function appendtoDom(data){
+    //     for (var i = 0 ; i < data.length; i++){
+    //     var nameDiv = $("div");
+    //     var idDiv = $("div");
+    //     nameDiv.html(data[i].name);
+    //     idDiv.html(data[i].id);
 
-      }
-    });
+    //     if(i < 5){
+    //     $("#name").text(nameDiv);
+    //     $("#role").text(idDiv);
+    //     }
+    //     else{
+    //     $("#wait-name").text(nameDiv);
+    //     $("wait-role").text(idDiv);
+    //     }
+
+    //   }
+    // }
+
   });
  </script>
 

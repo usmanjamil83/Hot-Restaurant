@@ -59,13 +59,19 @@
 
       </div>
     </div>
+    <p>
+      <a href = "#" id="clear">Clear Table</a>
+      |
+      <a href = "/api/booked"> API Table Link</a>
+      |
+      <a href = "/api/waitlist"> API Wait List</a>
+    </p>
   </div>
 
   <script type="text/javascript">
     // Question: What does this code do?
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
-
       var newReservation = {
         name: $("#name").val().trim(),
         number: $("#number").val().trim(),
@@ -76,13 +82,13 @@
       $("#number").empty();
       $("#email").empty();
       $("#id").empty();
+
       // Question: What does this code do??
       $.post("/reserve-post", newReservation)
       .done(function(data) {
         console.log(data);
         alert("Adding Reservation...");
       });
-
     });
   </script>
 </body>

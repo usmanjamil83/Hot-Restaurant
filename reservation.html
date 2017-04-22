@@ -16,8 +16,7 @@
       <h1>Hot Restaurant</h1>
       <h3>Make your reservation</h3>
       <hr>
-      <a href="table.html"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-th-list"></span> View Table</button></a>
-      <a href="home.html"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-eye-open"></span> Home</button></a>
+      <a href="all"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-th-list"></span> View Table</button></a>
     </div>
     <div class="row">
 
@@ -75,7 +74,7 @@
       };
 
       // Question: What does this code do??
-      $.post("/api/new", newReservation)
+      $.post("/reserve-post", newReservation)
       .done(function(data) {
         console.log(data);
         alert("Adding Reservation...");

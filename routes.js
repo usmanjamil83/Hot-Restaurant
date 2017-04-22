@@ -5,6 +5,15 @@ var app = express();
 var PORT = 3000
 var tablesArr = [];
 var waitList = [];
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended:true
+}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({
+	type:"application/vnd.api+json"
+}));
 app.get('/all',function (req,res) {
 	res.sendFile(path.join(__dirname,"table.html"))
 });
@@ -13,7 +22,7 @@ app.get('/reserve',function (req,res){
 });
 app.get('/api/:tables',function(req,res){
 	var newTable = req.params.tables;
-	if(newTable === booked){
+	if(newTable === "booked"){
 		res.json(tablesArr);
 	}
 	else{
@@ -21,13 +30,17 @@ app.get('/api/:tables',function(req,res){
 	}
 });
 
-app.post('/all', function(req,res){
+app.post('/reserve-post', function(req,res){
+	var newTable = req.body;
 	if(tablesArr.length < 5){
-			tablesArr.push(req)
+			tablesArr.push(newTable);
+			res.send("You have booked a table");
 	}
 	else{
-		waitList.push(req)
+		waitList.push(newTable);
+		res.send("you are on the waiting list");
 	}
+
 })
 app.listen(PORT,function(){
 console.log("Listening on PORT: ",PORT);

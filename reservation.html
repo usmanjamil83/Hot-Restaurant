@@ -17,6 +17,7 @@
       <h3>Make your reservation</h3>
       <hr>
       <a href="all"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-th-list"></span> View Table</button></a>
+            <a href="/"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-eye-open"></span> Home</button></a>
     </div>
     <div class="row">
 
@@ -87,7 +88,7 @@
       $.post("/reserve-post", newReservation)
       .done(function(data) {
         console.log(data);
-        alert("Adding Reservation...");
+        // alert("Adding Reservation...");
       });
     });
   </script>

@@ -14,6 +14,9 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({
 	type:"application/vnd.api+json"
 }));
+app.get('/',function(req,res){
+	res.sendFile(path.join(__dirname,"home.html"));
+})
 app.get('/all',function (req,res) {
 	res.sendFile(path.join(__dirname,"table.html"))
 
